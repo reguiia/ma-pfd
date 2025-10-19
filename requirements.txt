@@ -1,0 +1,6 @@
+streamlit
+playwright
+nest-asyncio
+pandas
+openpyxl
+tqdm
