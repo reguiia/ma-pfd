@@ -1,4 +1,3 @@
-
 import streamlit as st
 import logging, asyncio, os, pandas as pd, time
 from dataclasses import dataclass, asdict
@@ -6,7 +5,6 @@ from typing import List, Optional
 from playwright.async_api import async_playwright, Page
 from playwright.sync_api import sync_playwright
 import nest_asyncio
-from IPython.display import clear_output
 import tempfile
 import json
 
