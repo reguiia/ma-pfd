@@ -3,13 +3,21 @@ import logging, asyncio, os, pandas as pd, time
 from dataclasses import dataclass, asdict
 from typing import List, Optional
 from playwright.async_api import async_playwright, Page
-from playwright.sync_api import sync_playwright
 import nest_asyncio
 import tempfile
-import json
+import subprocess
+import sys
 
 # Apply nest_asyncio for compatibility
 nest_asyncio.apply()
+
+# Install Playwright browsers if not already installed
+@st.cache_resource
+def install_playwright_browsers():
+    subprocess.run([sys.executable, "-m", "playwright", "install", "chromium", "--with-deps"])
+
+# Install browsers when the app starts
+install_playwright_browsers()
 
 # Data Model
 @dataclass
